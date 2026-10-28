@@ -104,7 +104,7 @@ This layered approach ensures that:
 
 ### 1.4 Normative Content
 
-In addition to the protocol requirements defined in this document, the file `specification/a2a.proto` is the single authoritative normative definition of all protocol data objects and request/response messages. A generated JSON artifact (`specification/json/a2a.json`, produced at build time and not committed) MAY be published for convenience to tooling and the website, but it is a non-normative build artifact. SDK language bindings, schemas, and any other derived forms **MUST** be regenerated from the proto (directly or via code generation) rather than edited manually.
+In addition to the protocol requirements defined in this document, the repository source file `specification/a2a.proto` is the single authoritative normative definition of all protocol data objects and request/response messages. A generated JSON Schema artifact (`specification/json/a2a.json`, produced at build time and not committed) MAY be published for convenience to tooling and the website, but it is a non-normative build artifact. SDK language bindings, schemas, and any other derived forms **MUST** be regenerated from the proto (directly or via code generation) rather than edited manually.
 
 **Change Control and Deprecation Lifecycle:**
 
@@ -116,7 +116,7 @@ In addition to the protocol requirements defined in this document, the file `spe
 
 **Automated Generation:**
 
-The documentation build generates `specification/json/a2a.json` on-the-fly (the file is not tracked in source control). Future improvements may publish an OpenAPI v3 + JSON Schema bundle for enhanced tooling.
+The documentation build generates `specification/json/a2a.json` on-the-fly (the file is not tracked in source control). It copies the source proto and generated JSON Schema into `docs/spec/` for publication at `spec/a2a.proto` and `spec/a2a.json`, respectively, on the documentation site. Future improvements may publish an OpenAPI v3 + JSON Schema bundle for enhanced tooling.
 
 **Rationale:**
 
